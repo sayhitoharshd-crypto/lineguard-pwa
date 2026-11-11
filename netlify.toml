@@ -1,6 +1,7 @@
 
+
 [build]
-  command = "mkdir -p app && unzip -o LineGuard-PWA-Only.zip -d app && cd app && npm install && npx expo export --platform web"
+  command = "mkdir -p app && unzip -o LineGuard-PWA-Only.zip -d app && cd app && node -e \"const fs=require('fs');const p='app.json';const j=JSON.parse(fs.readFileSync(p,'utf8'));j.expo.web={...(j.expo.web||{}),output:'single'};fs.writeFileSync(p,JSON.stringify(j,null,2));\" && npm install && npx expo export --platform web"
   publish = "app/dist"
 
 [build.environment]
