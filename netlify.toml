@@ -1,0 +1,7 @@
+
+[build]
+  command = "mkdir -p app && unzip -o LineGuard-PWA-Only.zip -d app && cd app && npm install && npx expo export --platform web"
+  publish = "app/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
