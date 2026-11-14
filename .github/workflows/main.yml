@@ -1,1 +1,19 @@
 
+name: LineGuard Android Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - firebase-auth-update
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show repository files
+        run: ls -la
+
